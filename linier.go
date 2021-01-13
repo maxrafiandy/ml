@@ -234,7 +234,7 @@ func (l *LinearRegression) Grad(grad, theta []float64) {
 		for i, x := range l.Features {
 			sum += (l.Hypothesis(x, theta) - l.Output[i]) * x[j]
 		}
-		grad[j] -= l.LearningRate / m * sum
+		grad[j] = l.LearningRate / m * sum
 	}
 }
 
